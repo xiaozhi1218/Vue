@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
 
-  <body>
-    <div id="app">
-      <h2>{{firstName + ' ' + lastName}}</h2>
-      <h2>{{firstName}} {{lastName}}</h2>
+<div id="app">
+  <h2>{{firstName + ' ' + lastName}}</h2>
+  <h2>{{firstName}} {{lastName}}</h2>
 
-      <h2>{{getFullName()}}</h2>
+  <h2>{{getFullName()}}</h2>
 
-      <h2>{{FullName}}</h2>
-    </div>
+  <h2>{{fullName}}</h2>
+</div>
 
-    <script src="../js/vue.js"></script>
-    <script>
-      const app = new Vue({
-        el: "#app",
-        data: {
-          message: '你好啊',
-          firstName: 'lebrn',
-          lastName: 'james'
-        },
-        computed: {
-          FullName: function () {
-            return this.firstName + ' ' + this.lastName
-          }
-        },
-        methods: {
-          getFullName () {
-            return this.firstName + ' ' + this.lastName
-          }
-        },
-      });
-    </script>
-  </body>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      firstName: 'Lebron',
+      lastName: 'James'
+    },
+    // computed: 计算属性()
+    computed: {
+      fullName: function () {
+        return this.firstName + ' ' + this.lastName
+      }
+    },
+    methods: {
+      getFullName() {
+        return this.firstName + ' ' + this.lastName
+      }
+    }
+  })
+</script>
+
+</body>
 </html>
