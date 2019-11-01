@@ -9,7 +9,9 @@
 <body>
 
   <div id="app">
-    <input v-model="message" type="text" />
+    <!-- <input v-model="message" type="text" /> -->
+    <!-- <input type="text" :value="message" @input="valueChange"> -->
+    <input type="text" :value="message" @input="message = $event.target.value">
     {{message}}
   </div>
 
@@ -19,6 +21,11 @@
       el: '#app',
       data: {
         message: '你好啊',
+      },
+      methods: {
+        valueChange(event) {
+          this.message = event.target.value
+        }
       },
     })
   </script>
