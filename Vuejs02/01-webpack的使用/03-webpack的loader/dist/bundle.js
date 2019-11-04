@@ -60,99 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info__ = __webpack_require__(2);
-// 1.使用commonjs的模块化规范
-const {add, mul} = __webpack_require__(1)
-
-console.log(add(20, 30));
-console.log(mul(20, 30));
-
-// 2.使用ES6的模块化的规范
-
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["c" /* name */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["a" /* age */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["b" /* height */]);
-
-// 3.依赖css文件
-__webpack_require__(3)
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-function add(num1, num2) {
-  return num1 + num2
-}
-
-function mul(num1, num2) {
-  return num1 * num2
-}
-
-module.exports = {
-  add,
-  mul
-}
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const name = 'why';
-/* harmony export (immutable) */ __webpack_exports__["c"] = name;
-
-const age = 18;
-/* harmony export (immutable) */ __webpack_exports__["a"] = age;
-
-const height = 1.88;
-/* harmony export (immutable) */ __webpack_exports__["b"] = height;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var content = __webpack_require__(4);
-
-if (typeof content === 'string') {
-  content = [[module.i, content, '']];
-}
-
-var options = {}
-
-options.insert = "head";
-options.singleton = false;
-
-var update = __webpack_require__(6)(content, options);
-
-if (content.locals) {
-  module.exports = content.locals;
-}
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(false);
-// Module
-exports.push([module.i, "body {\r\n   background-color: red;\r\n}", ""]);
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -248,7 +160,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 6 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -534,6 +446,128 @@ module.exports = function (list, options) {
     }
   };
 };
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info__ = __webpack_require__(4);
+// 1.使用commonjs的模块化规范
+const {add, mul} = __webpack_require__(3)
+
+console.log(add(20, 30));
+console.log(mul(20, 30));
+
+// 2.使用ES6的模块化的规范
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["c" /* name */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["a" /* age */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["b" /* height */]);
+
+// 3.依赖css文件
+__webpack_require__(5)
+
+// 4.依赖less文件
+__webpack_require__(7)
+document.writeln('<h2>hello,world</h2>')
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+function add(num1, num2) {
+  return num1 + num2
+}
+
+function mul(num1, num2) {
+  return num1 * num2
+}
+
+module.exports = {
+  add,
+  mul
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const name = 'cyz'
+/* harmony export (immutable) */ __webpack_exports__["c"] = name;
+
+const age = 18
+/* harmony export (immutable) */ __webpack_exports__["a"] = age;
+
+const height = 1.88
+/* harmony export (immutable) */ __webpack_exports__["b"] = height;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(6);
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(1)(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// Module
+exports.push([module.i, "body {\r\n   background-color: red;\r\n}", ""]);
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(8);
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(1)(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// Module
+exports.push([module.i, "body {\n  font-size: 50px;\n  color: orange;\n}\n", ""]);
+
 
 /***/ })
 /******/ ]);
