@@ -24,6 +24,20 @@ module.exports = {
         }, {
           loader: "less-loader", // compiles Less to CSS
         }]
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              // 当加载的图片, 小于limit时, 会将图片编译成base64字符串形式.
+              // 当加载的图片, 大于limit时, 需要使用file-loader模块进行加载.
+              limit: 13000,
+              // name: 'img/[name].[hash:8].[ext]'
+            },
+          }
+        ]
       }
     ]
   }
