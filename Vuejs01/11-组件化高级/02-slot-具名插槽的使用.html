@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 
+      2.6.0 之后的写法：
+      现在 <template> 元素中的所有内容都将会被传入相应的插槽。
+      任何没有被包裹在带有 v-slot 的 <template> 中的内容都会被视为默认插槽的内容。
+    -->
+    <cpn>
+      <template v-slot:center>
+        <span>标题</span>
+      </template>
+
+      <template v-slot:left>
+        <button>返回</button>
+      </template>
+      
+      <template v-slot:default>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </template>
+      <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+    </cpn>
+
+    <!-- 2.6.0之前的写法，已废弃 -->
+    <!-- <cpn>
+      <span slot="center">标题</span>
+      <button slot="left">返回</button>
+    </cpn> -->
+  </div>
+
+  <template id="cpn">
+    <div>
+      <slot name="left"><span>左边</span></slot>
+      <slot name="center"><span>中间</span></slot>
+      <slot name="right"><span>右边</span></slot>
+      <slot></slot> 
+    </div>
+  </template>
+
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊',
+      },
+      components: {
+        cpn: {
+          template: '#cpn'
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>
