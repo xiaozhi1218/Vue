@@ -449,13 +449,17 @@ module.exports = function (list, options) {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info__ = __webpack_require__(4);
+
+
+var _info = __webpack_require__(3);
+
 // 1.使用commonjs的模块化规范
-const {add, mul} = __webpack_require__(3)
+var _require = __webpack_require__(4),
+    add = _require.add,
+    mul = _require.mul;
 
 console.log(add(20, 30));
 console.log(mul(20, 30));
@@ -463,49 +467,50 @@ console.log(mul(20, 30));
 // 2.使用ES6的模块化的规范
 
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["c" /* name */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["a" /* age */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["b" /* height */]);
+console.log(_info.name);
+console.log(_info.age);
+console.log(_info.height);
 
 // 3.依赖css文件
-__webpack_require__(5)
+__webpack_require__(5);
 
 // 4.依赖less文件
-__webpack_require__(9)
-document.writeln('<h2>hello,world</h2>')
-
+__webpack_require__(9);
+document.writeln('<h2>hello,world</h2>');
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function add(num1, num2) {
-  return num1 + num2
-}
+"use strict";
 
-function mul(num1, num2) {
-  return num1 * num2
-}
 
-module.exports = {
-  add,
-  mul
-}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var name = exports.name = 'cyz';
+var age = exports.age = 18;
+var height = exports.height = 1.88;
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const name = 'cyz'
-/* harmony export (immutable) */ __webpack_exports__["c"] = name;
 
-const age = 18
-/* harmony export (immutable) */ __webpack_exports__["a"] = age;
 
-const height = 1.88
-/* harmony export (immutable) */ __webpack_exports__["b"] = height;
+function add(num1, num2) {
+  return num1 + num2;
+}
 
+function mul(num1, num2) {
+  return num1 * num2;
+}
+
+module.exports = {
+  add: add,
+  mul: mul
+};
 
 /***/ }),
 /* 5 */
