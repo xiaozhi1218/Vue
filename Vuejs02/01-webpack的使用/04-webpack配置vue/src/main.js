@@ -20,23 +20,13 @@ document.writeln('<h2>hello,world</h2>')
 
 // 5. 使用Vue进行开发
 import Vue from 'vue'
+// import App from './vue/app';
+import App from './vue/App.vue'
 
 new Vue({
   el: '#app',
-  template: `
-    <div>
-      <h2>{{message}}</h2>
-      <button @click="btnClick">按钮</button>
-      <h2>{{name}}</h2>
-    </div>
-  `,
-  data: {
-    message: 'hello Webpck',
-    name: 'cyz'
-  },
-  methods: {
-    btnClick() {
-
-    }
-  },
+  template: '<App/>',
+  components: {
+    App
+  }
 })
