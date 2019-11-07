@@ -3,9 +3,7 @@ const b = 20
 
 console.log('Hello, World');
 
-function sum(num1, num2) {
-  return num1 * num2
-}
+const sum = num => num ** 2 
 
-console.log(sum(a, b));
+console.log(sum(a));
 
