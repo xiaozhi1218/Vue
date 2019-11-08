@@ -7,8 +7,12 @@ import Vue from 'vue'
 // import User from '../components/User.vue'
 
 const Home = () => import('../components/Home.vue')
+const HomeNews = () => import('../components/HomeNews.vue')
+const HomeMessage = () => import('../components/HomeMessage.vue')
+
 const About = () => import('../components/About.vue')
 const User = () => import('../components/User.vue')
+const Profile = () => import('../components/Profile.vue')
 
 // 1. 通过vue.use(插件)，安装插件
 Vue.use(VueRouter)
@@ -22,15 +26,49 @@ const routes = [
   },
   {
     path: '/home',
-    component: Home
+    component: Home,
+    meta: {
+      title: '首页'
+    },
+    children: [
+      // {
+      //   path: '',
+      //   redirect: 'news'
+      // },
+      {
+        path: 'news',
+        component: HomeNews
+      },
+      {
+        path: 'message',
+        component: HomeMessage
+      }
+    ]
   },
   {
     path: '/about',
-    component: About
+    component: About,
+    meta: {
+      title: '关于'
+    },
+    beforeEnter: (to, from, next) => {
+      // console.log('about beforeEnter');
+      next()
+    }
   },
   {
     path: '/user/:userId',
-    component: User
+    component: User,
+    meta: {
+      title: '用户'
+    },
+  },
+  {
+    path: '/Profile',
+    component: Profile,
+    meta: {
+      title: '档案'
+    },
   }
 ]
 
@@ -39,6 +77,20 @@ const router = new VueRouter({
   routes,
   mode: 'history',
   linkActiveClass: 'active'
+})
+
+// 前置守卫(guard)
+router.beforeEach((to, form, next) => {
+  // 从from跳转到to
+  document.title = to.matched[0].meta.title
+  // console.log(to);
+  // console.log('++++');
+  next()
+})
+
+// 后置钩子(hook)
+router.afterEach((to, from) => {
+  // console.log('-----');
 })
 
 // 3. 将router对象传入到Vue实例
