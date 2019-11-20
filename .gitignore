@@ -19,3 +19,16 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+Vuejs05/mall/.browserslistrc
+Vuejs05/mall/.gitignore
+Vuejs05/mall/babel.config.js
+Vuejs05/mall/package-lock.json
+Vuejs05/mall/package.json
+Vuejs05/mall/postcss.config.js
+Vuejs05/mall/README.md
+Vuejs05/mall/public/favicon.ico
+Vuejs05/mall/public/index.html
+Vuejs05/mall/src/App.vue
+Vuejs05/mall/src/main.js
+Vuejs05/mall/src/assets/logo.png
+Vuejs05/mall/src/components/HelloWorld.vue
